@@ -27,9 +27,9 @@ class Main {
         System.out.println("Hard mode");
         int maximum = 100;
     }
-    int mysteryNum = r.nextInt(maximum) + 1;
-        System.out.print("I'm thinking a number between 1 and 10(included), can you guess it: ");
-        int guessNum = s.nextInt();
+    int mysteryNum = (int)(Math.random()*maximum)+1;
+    System.out.print("I'm thinking a number between 1 and 10(included), can you guess it: ");
+    int guessNum = s.nextInt();
     if (guessNum == mysteryNum){
       System.out.println("You are correct! The number is "+mysteryNum);
     }// close if
