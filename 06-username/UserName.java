@@ -14,19 +14,19 @@ public class UserName {
     int num = s.nextInt();
 
     // test output
-    System.out.println("Your username is " + firstName + initialize(lastName) + num + "." );
+    System.out.println("Your username is " + firstName +  getInitial(lastName) + num + "." );
 
     s.close();
   } // end main method
 
   /*
-   * Name: initialize
+   * Name:  getInitial
    * Purpose: send back the first character (inital) of a name
    * Input: a name (String)
    * Return: a single character (String)
    */
-  public static String initialize(String n) {
+  public static String getInitial(String n) {
     return n.substring(0, 1);
-  } // end initialize method
+  } // end  getInitial method
 
 } // end class
