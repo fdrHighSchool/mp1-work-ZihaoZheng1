@@ -4,19 +4,28 @@ public class UserName {
   public static void main(String[] args) {
     // create Scanner object
     Scanner s = new Scanner(System.in);
-
-    // get String input from user
+    Scanner i = new Scanner(System.in);
+    // get input from user
     System.out.print("Enter your first name: ");
     String firstName = s.nextLine();
+    
     System.out.print("Enter your last name: ");
     String lastName = s.nextLine();
+    
     System.out.print("Enter your favorite number: ");
-    int num = s.nextInt();
-
-    // test output
-    System.out.println("Your username is " + firstName +  getInitial(lastName) + num + "." );
-
+    int num = i.nextInt();
+    
+    System.out.print("Are you a student(yes or no): ");
+    String type = s.nextLine();
+    
     s.close();
+    if (type.equals("yes")){
+     System.out.println("Your username is " + firstName +  getInitial(lastName) + num + "@nycstudents.net" );
+    } // close if method
+    else{
+     System.out.println("Your username is " + getInitial(firstName) +  lastName + num + "@schools.nyc.gov" );
+    }// close else method
+    
   } // end main method
 
   /*
