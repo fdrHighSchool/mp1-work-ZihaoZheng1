@@ -15,11 +15,11 @@ public class UserName {
     System.out.print("Enter your favorite number: ");
     int num = i.nextInt();
     
-    System.out.print("Are you a student(yes or no): ");
+    System.out.print("Are you a student or teacher: ");
     String type = s.nextLine();
     
     s.close();
-    if (type.equals("yes")){
+    if (type.equals("student")){
      System.out.println("Your username is " + firstName +  getInitial(lastName) + num + "@nycstudents.net" );
     } // close if method
     else{
