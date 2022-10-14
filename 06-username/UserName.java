@@ -19,13 +19,12 @@ public class UserName {
     String type = s.nextLine();
     
     s.close();
-    if (type.equals("student")){
-     System.out.println("Your username is " + firstName +  getInitial(lastName) + num + "@nycstudents.net" );
+    if (lower(type).equals("student")){
+     System.out.println("Your username is " + lower(firstName) +  lower(getInitial(lastName)) + num + "@nycstudents.net" );
     } // close if method
     else{
-     System.out.println("Your username is " + getInitial(firstName) +  lastName + num + "@schools.nyc.gov" );
+     System.out.println("Your username is " + lower(getInitial(firstName)) +  lower(lastName) + num + "@schools.nyc.gov" );
     }// close else method
-    
   } // end main method
 
   /*
@@ -36,6 +35,8 @@ public class UserName {
    */
   public static String getInitial(String n) {
     return n.substring(0, 1);
-  } // end  getInitial method
-
+   } // end  getInitial method
+  public static String lower(String t){
+    return t.toLowerCase();
+  }
 } // end class
