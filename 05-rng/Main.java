@@ -15,20 +15,22 @@ class Main {
     
     System.out.println("Before starting the game, what mode do you want\nEasy\nMedium\nHard");
     String mode = s.nextLine();
+    
+    int maximum;
     if (mode.equals("Easy")){
         System.out.println("Easy mode");
-        int maximum = 10;
-    }
+        maximum = 10;
+    } // close if method
     else if(mode.equals("Medium")){
         System.out.println("Medium mode");
-        int maximum = 50;
-    }
+        maximum = 50;
+    } // close else if method
     else{
         System.out.println("Hard mode");
-        int maximum = 100;
-    }
-    int mysteryNum = (int)(Math.random()*maximum)+1;
-    System.out.print("I'm thinking a number between 1 and 10(included), can you guess it: ");
+        maximum = 100;
+    } // close else method
+    int mysteryNum = (int)(Math.random() * maximum)+1;
+    System.out.print("I'm thinking a number between 1 and " + maximum + "(included), can you guess it: ");
     int guessNum = s.nextInt();
     if (guessNum == mysteryNum){
       System.out.println("You are correct! The number is "+mysteryNum);
