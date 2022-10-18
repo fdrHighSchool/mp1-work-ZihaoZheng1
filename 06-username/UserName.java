@@ -1,5 +1,5 @@
 import java.util.Scanner;
-
+import java.util.Random;
 public class UserName {
   public static void main(String[] args) {
     // create Scanner object
@@ -19,6 +19,7 @@ public class UserName {
     String type = s.nextLine();
     
     s.close();
+    i.close();
     if (lower(type).equals("student")){
      System.out.println("Your username is " + lower(firstName) +  lower(getInitial(lastName)) + num + "@nycstudents.net" );
     } // close if method
@@ -39,4 +40,18 @@ public class UserName {
   public static String lower(String t){
     return t.toLowerCase();
   }
+  
+  public static String generatePassword(int length) {
+    String password="";
+    char c;
+    for(int i=0;i<= length;i++){
+    int rand1 = (int)(Math.random()*(90-65+1)+65);
+    int rand2 = (int)(Math.random()*(122-97+1)+97);
+    int rand3 = (int)(Math.random()*(47-33+1)+33);
+    } // close for method 
+    
+    
+    return password;
+  } // end generatePassword method
+
 } // end class
