@@ -18,6 +18,8 @@ public class UserName {
     System.out.print("Are you a student or teacher: ");
     String type = s.nextLine();
     
+    System.out.print("What length of password do you want: ");
+    int length = i.nextInt();
     s.close();
     i.close();
     if (lower(type).equals("student")){
@@ -26,6 +28,7 @@ public class UserName {
     else{
      System.out.println("Your username is " + lower(getInitial(firstName)) +  lower(lastName) + num + "@schools.nyc.gov" );
     }// close else method
+    generatePassword(length);
   } // end main method
 
   /*
@@ -39,19 +42,33 @@ public class UserName {
    } // end  getInitial method
   public static String lower(String t){
     return t.toLowerCase();
-  }
-  
+  } // close lowercase method
+
   public static String generatePassword(int length) {
     String password="";
-    char c;
-    for(int i=0;i<= length;i++){
-    int rand1 = (int)(Math.random()*(90-65+1)+65);
-    int rand2 = (int)(Math.random()*(122-97+1)+97);
-    int rand3 = (int)(Math.random()*(47-33+1)+33);
-    } // close for method 
-    
-    
-    return password;
-  } // end generatePassword method
-
-} // end class
+    for(int i=0;i< length;i++){
+    int rand1 = (int)(Math.random()*(26)+65);
+    int rand2 = (int)(Math.random()*(26)+97);
+    int rand3 = (int)(Math.random()*(15)+33);
+    int rand4 = (int)(Math.random()*10+1);
+    int rand5 = (int)(Math.random()*4+1);
+    char c1=(char)rand1;
+    char c2=(char)rand2;
+    char c3=(char)rand3;
+    if (rand5==1){
+        password += c1;
+     } //close if
+    else if (rand5==2){
+        password += c2;
+     }// close else if
+    else if (rand5==3){
+        password += c3;
+     }// close else if
+    else{
+        password += rand4;
+     }//close else
+    }// close for method
+     System.out.println("Your password is: "+password);
+     return password;
+    } // close generate method 
+  } // end class
