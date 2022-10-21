@@ -47,27 +47,27 @@ public class UserName {
   public static String generatePassword(int length) {
     String password="";
     for(int i=0;i< length;i++){
-    int rand1 = (int)(Math.random()*(26)+65);
-    int rand2 = (int)(Math.random()*(26)+97);
-    int rand3 = (int)(Math.random()*(15)+33);
-    int rand4 = (int)(Math.random()*10+1);
-    int rand5 = (int)(Math.random()*4+1);
-    char c1=(char)rand1;
-    char c2=(char)rand2;
-    char c3=(char)rand3;
-    if (rand5==1){
-        password += c1;
-     } //close if
-    else if (rand5==2){
-        password += c2;
-     }// close else if
-    else if (rand5==3){
-        password += c3;
-     }// close else if
-    else{
-        password += rand4;
-     }//close else
-    }// close for method
+        int rand5 = (int)(Math.random()*4+1);//Select
+        if (rand5==1){
+            int rand1 = (int)(Math.random()*(26)+65);//random capital letter
+            char c1=(char)rand1;
+            password += c1;
+         } //close if
+        else if (rand5==2){
+            int rand2 = (int)(Math.random()*(26)+97);//random lowercase
+            char c2=(char)rand2;
+            password += c2;
+         }// close else if
+        else if (rand5==3){
+            int rand3 = (int)(Math.random()*(15)+33);//random special symbol
+            char c3=(char)rand3;
+            password += c3;
+         }// close else if
+        else{
+            int rand4 = (int)(Math.random()*10+1);//random number
+            password += rand4;
+         }//close else
+    }// close for loop method
      System.out.println("Your password is: "+password);
      return password;
     } // close generate method 
